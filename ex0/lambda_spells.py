@@ -1,5 +1,5 @@
 def artifact_sorter(artifacts: list[dict]) -> list[dict]:
-    return sorted(artifacts ,key=lambda item: item["power"], reverse=True)
+    return sorted(artifacts, key=lambda item: item["power"], reverse=True)
 
 
 def power_filter(mages: list[dict], min_power: int) -> list[dict]:
@@ -20,6 +20,7 @@ def mage_stats(mages: list[dict]) -> dict:
         "avg_power": avg_power,
     }
 
+
 def main() -> None:
     artifacts = [
         {"name": "Fire Staff", "power": 92, "type": "weapon"},
@@ -27,7 +28,7 @@ def main() -> None:
     ]
 
     spells = ["fireball", "heal", "shield"]
-    
+
     print("\nTesting artifact sorter...")
     sa = artifact_sorter(artifacts)
     print(f"{sa[0]['name']} ({sa[0]['power']} power) "

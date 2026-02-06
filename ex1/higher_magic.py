@@ -9,7 +9,7 @@ def spell_combiner(spell1: callable, spell2: callable) -> callable:
 
 
 def power_amplifier(base_spell: callable, multiplier: int) -> callable:
-        return lambda *args, **kwargs: base_spell(*args, **kwargs) * multiplier
+    return lambda *args, **kwargs: base_spell(*args, **kwargs) * multiplier
 
 
 def conditional_caster(condition: callable, spell: callable) -> callable:
@@ -19,28 +19,29 @@ def conditional_caster(condition: callable, spell: callable) -> callable:
 
 
 def spell_sequence(spells: list[callable]) -> callable:
-    return (lambda *args, **kwargs: 
+    return (lambda *args, **kwargs:
             [spell(*args, **kwargs) for spell in spells])
 
 
 def main() -> None:
     print("\nTesting spell combiner...")
+
     def fireball(target):
-         return f"Fireball hits {target}"
+        return f"Fireball hits {target}"
 
     def heal(target):
-         return f"Heals {target}"
+        return f"Heals {target}"
     combined_spell = spell_combiner(fireball, heal)
     print(f"Combined spell result: {combined_spell('Dragon')}")
 
     print("\nTesting power amplifier...")
 
     def damage():
-         return 10
+        return 10
 
     aplified_power = power_amplifier(damage, 3)
     print(f"Original: {damage()}, Amplified: {aplified_power()}")
 
 
 if __name__ == "__main__":
-     main()
+    main()

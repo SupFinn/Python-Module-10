@@ -2,6 +2,7 @@ from functools import lru_cache, singledispatch, partial
 import functools
 import operator
 
+
 def spell_reducer(spells: list[int], operation: str) -> int:
     operations = {
         "add": operator.add,
@@ -62,6 +63,7 @@ def main() -> None:
     print("\nTesting memoized fibonacci...")
     print(f"Fib(10): {memoized_fibonacci(10)}")
     print(f"Fib(15): {memoized_fibonacci(15)}")
+
 
 if __name__ == "__main__":
     main()

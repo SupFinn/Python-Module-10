@@ -54,6 +54,7 @@ class MageGuild:
 
 def main() -> None:
     print("\nTesting spell timer...")
+
     @spell_timer
     def fireball():
         return "Fireball cast!"
