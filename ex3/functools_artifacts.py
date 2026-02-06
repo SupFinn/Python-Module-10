@@ -19,7 +19,7 @@ def partial_enchanter(base_enchantment: callable) -> dict[str, callable]:
     return {
         "fire_enchant": partial(base_enchantment, 50, "fire"),
         "ice_enchant": partial(base_enchantment, 50, "ice"),
-        "lightning_enchan": partial(base_enchantment, 50, "lightning")
+        "lightning_enchant": partial(base_enchantment, 50, "lightning")
     }
 
 
@@ -47,8 +47,21 @@ def spell_dispatcher() -> callable:
 
     @cast_spell.register
     def _(arg: list):
-        return f"Casting Multiple Spells: {", ".join(arg)}"
+        return f"Casting Multiple Spells: {', '.join(arg)}"
 
     return cast_spell
 
 
+def main() -> None:
+    print("\nTesting spell reducer...")
+    num_list = [10, 20, 30, 40]
+    print(spell_reducer(num_list, "add"))
+    print(spell_reducer(num_list, "multiply"))
+    print(spell_reducer(num_list, "max"))
+
+    print("\nTesting memoized fibonacci...")
+    print(f"Fib(10): {memoized_fibonacci(10)}")
+    print(f"Fib(15): {memoized_fibonacci(15)}")
+
+if __name__ == "__main__":
+    main()
