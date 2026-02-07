@@ -56,9 +56,9 @@ def spell_dispatcher() -> callable:
 def main() -> None:
     print("\nTesting spell reducer...")
     num_list = [10, 20, 30, 40]
-    print(spell_reducer(num_list, "add"))
-    print(spell_reducer(num_list, "multiply"))
-    print(spell_reducer(num_list, "max"))
+    print(f"Sum: {spell_reducer(num_list, 'add')}")
+    print(f"Product: {spell_reducer(num_list, 'multiply')}")
+    print(f"Max: {spell_reducer(num_list, 'max')}")
 
     print("\nTesting memoized fibonacci...")
     print(f"Fib(10): {memoized_fibonacci(10)}")

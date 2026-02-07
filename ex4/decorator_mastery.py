@@ -58,7 +58,7 @@ def main() -> None:
     @spell_timer
     def fireball():
         return "Fireball cast!"
-    print(f"Result {fireball()}")
+    print(f"Result: {fireball()}")
 
     print("\nTesting MageGuild...")
     mageguild = MageGuild()
